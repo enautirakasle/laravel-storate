@@ -18,7 +18,14 @@ class InfoController extends Controller
         return view('create');
     }
 
-    public function store(InfoRequest $request){
+    public function store(Request $request){
+        // $request->file('image')->store('public/images');
+        $path = $request->file('file')->store('images', 'public');
+        $info = new Info();
+        $info->name = $request->name;
+        $info->file_uri = basename($path); // Only store the filename
+        $info->save();
+        return redirect()->route('index')->with('success', 'Info guardado con imagen');
 
     }
 

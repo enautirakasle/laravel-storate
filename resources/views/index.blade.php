@@ -12,9 +12,7 @@
     @forelse ($infos as $info)
         <h1>{{ $info->name }}</h1>
         <p>{{ $info->file_uri }}</p>
-        <img src="{{ asset( $info->file_uri) }}" alt="{{ $info->name }}" width="200">
-
-        <img src="{{ asset('storage/' . $info->file_uri) }}" alt="{{ $info->name }}" width="200">
+        <img src="{{ asset('storage/images/' . $info->file_uri) }}" alt="{{ $info->name }}" width="200">
        
     @empty
         <p>No data</p>
