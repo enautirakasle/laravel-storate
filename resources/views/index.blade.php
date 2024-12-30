@@ -7,11 +7,11 @@
     <title>Document</title>
 </head>
 <body>
-    <a href="{{ route('create') }}">Create</a>
+    <a href="{{ route('infos.create') }}">Create</a>
 
     @forelse ($infos as $info)
         <h1>{{ $info->name }}</h1>
-        {{ __('Category') }}: {{ $info->category->name }}
+        {{ __('Category') }}: {{ $info->category ? $info->category->name : 'No Category' }}
         <p>{{ $info->file_uri }}</p>
         <img src="{{ asset('storage/images/' . $info->file_uri) }}" alt="{{ $info->name }}" width="200">
        
