@@ -14,6 +14,7 @@
         {{ __('Category') }}: {{ $info->category ? $info->category->name : 'No Category' }}
         <p>{{ $info->file_uri }}</p>
         <img src="{{ asset('storage/images/' . $info->file_uri) }}" alt="{{ $info->name }}" width="200">
+        <a href="{{ route('infos.edit', $info->id) }}">Edit</a>
        
     @empty
         <p>No data</p>

@@ -9,7 +9,7 @@
 <body>
     <a href="{{ route('categories.index') }}">Back</a>
 
-    <form action="{{ route('categories.update') }}" method="post">
+    <form action="{{ route('categories.update', $category) }}" method="post">
         @csrf
         @method('PUT')
         <input type="text" name="name" value="{{ $category->name}}" placeholder="Name">
