@@ -9,7 +9,8 @@ class InfoController extends Controller
 {
     public function index()
     {
-        $infos = Info::all();
+        // $infos = Info::all();
+        $infos = Info::with('category')->get();
         return view('index', compact('infos'));
     }
 

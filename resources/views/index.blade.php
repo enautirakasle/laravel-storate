@@ -11,6 +11,7 @@
 
     @forelse ($infos as $info)
         <h1>{{ $info->name }}</h1>
+        {{ __('Category') }}: {{ $info->category->name }}
         <p>{{ $info->file_uri }}</p>
         <img src="{{ asset('storage/images/' . $info->file_uri) }}" alt="{{ $info->name }}" width="200">
        
