@@ -7,6 +7,12 @@
     <title>Categories</title>
 </head>
 <body>
+
+    @if (session('success'))
+        <div style="padding: 1em; background-color: green; color: white">
+            {{ session('success') }}
+        </div>
+    @endif
     <a href="{{ route('categories.create') }}">Create</a>
 
     @forelse ($categories as $category)
